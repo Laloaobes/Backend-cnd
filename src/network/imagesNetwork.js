@@ -6,6 +6,11 @@ const upload = multer({ dest: 'uploads/' });
 const routes = express.Router();
 
 
+async function getImagesNetwork(request, response) {
+    const result = await Controller.onGetImages();
+    response.send(result.data);
+}
+
 async function imagesNetwork(request, response) {
     const file = request.file; 
     const result = await Controller.onNewImage(file.path);
@@ -20,5 +25,6 @@ async function onNewImage(req, res) {
 
 routes.post("/upload", upload.single('file'), imagesNetwork);
 routes.delete("/remove/:imagenId", onNewImage);
+routes.get("/", getImagesNetwork);
 
 module.exports = routes;
