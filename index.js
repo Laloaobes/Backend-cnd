@@ -4,11 +4,7 @@ const routes = require('./src/routes');
 const port = 6001;
 
 const cors = require('cors');
-app.use(cors({
-    origin: 'http://localhost:3000', 
-    methods: ['GET', 'POST'], 
-    allowedHeaders: ['Content-Type', 'Authorization'], 
-  }));
+app.use(cors());
   
 routes(app);
 
