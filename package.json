@@ -15,8 +15,7 @@
     "package.json": "^2.0.1"
   },
   "devDependencies": {
-    "express": "^4.21.2",
-    "nodemon": "^3.1.9"
+    "express": "^4.21.2"
   },
   "scripts": {
     "dev": "nodemon index.js"

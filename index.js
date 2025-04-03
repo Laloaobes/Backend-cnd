@@ -8,13 +8,7 @@ const port = 6000;
 routes(app);
 
 
-app.use(cors(
-    {
-        origin: 'http://localhost:6005',
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        allowedHeaders: ['Content-Type', 'Authorization'],
-    }
-));
+app.use(cors());
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port }`);
