@@ -1,17 +1,17 @@
 const express = require('express');
 const app = express();
-const cors = require('cors')
 const routes = require('./src/routes');
-const { init } = require('./src/servicelocator/composer')
-const port = 6000;
+const port = 6001;
 
+const cors = require('cors');
+app.use(cors({
+    origin: 'http://localhost:3000', 
+    methods: ['GET', 'POST'], 
+    allowedHeaders: ['Content-Type', 'Authorization'], 
+  }));
+  
 routes(app);
 
-
-app.use(cors());
-
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port }`);
-
-
+    console.log(`Example app listening at http://localhost:${port}`);
 });
